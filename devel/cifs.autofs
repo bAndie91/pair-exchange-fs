@@ -1,0 +1,1 @@
+/mnt/cifs/alpha program:/etc/autofs.d/cifs.sh -DCIFS_SERVER=alpha
