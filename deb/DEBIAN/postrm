@@ -1,0 +1,4 @@
+#!/bin/sh
+
+invoke-rc.d pair-exchange-tree stop
+update-rc.d -f pair-exchange-tree remove

@@ -1,0 +1,7 @@
+#
+# /etc/auto.master entry:
+#
+# +/etc/autofs.d/pair-exchange.autofs
+#
+
+/srv/files/exchange/user program:/usr/lib/pair-exchange-fs/libexec/autofs.sh
