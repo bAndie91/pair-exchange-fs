@@ -1,16 +1,16 @@
 Package: pair-exchange-fs
 Priority: optional
 Section: misc
-Installed-Size: 48
+Installed-Size: 36
 Maintainer: Andras Hrubak <andreas@uucp.hu>
 Architecture: all
-Version: 0.0.2
+Version: 0.0.3
 Depends: autofs
 Recommends: 
 Suggests: 
 Provides: 
 Replaces: 
-Conflicts: 
+Conflicts: yazzy-exchange, yazzy-utils (<< 0.2.0)
 Homepage: 
 Source: 
 Description: Mount directories via Autofs each accessible only by a pair of users but fully for them
