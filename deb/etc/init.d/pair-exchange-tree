@@ -117,8 +117,8 @@ then
 	_stop
 elif [ "$act" = restart ]
 then
-	_start
 	_stop
+	_start
 elif [ "$act" = status ]
 then
 	_status

@@ -1,10 +1,10 @@
 Package: pair-exchange-fs
 Priority: optional
 Section: misc
-Installed-Size: 36
+Installed-Size: 76
 Maintainer: Andras Hrubak <andreas@uucp.hu>
 Architecture: all
-Version: 0.0.3
+Version: 0.0.4
 Depends: autofs
 Recommends: 
 Suggests: 
