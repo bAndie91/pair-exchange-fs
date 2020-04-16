@@ -5,13 +5,14 @@ declare -A UsersAssoc
 
 LogMissingCommonFilnames=no
 IndicatorFilename=.pair-exchange-fs
+UsersGroup=users
 
 sortnames()
 {
 	echo -e "$1\n$2" | sort | { read a; read b; echo $a-$b; }
 }
 
-user_list=`getent group users | cut -f4 -d:`
+user_list=`getent group "$UsersGroup" | cut -f4 -d:`
 Users=(${user_list//,/ })
 
 for user in "${Users[@]}"
@@ -41,9 +42,13 @@ storedir=`dirname "$PWD"`/store
 
 if [ -z "${UsersAssoc[$user1]}" ]
 then
-	if ! grep -Exq '\.git|refs|objects|HEAD' <<<"$user1" || [ $LogMissingCommonFilnames = yes ]
+	if grep -Exq '\.git|refs|objects|HEAD|autorun\.inf' <<<"$user1" || [ ".$user1" = ".$IndicatorFilename" ]
 	then
-		echo "$user1 is not member of users." >&2
+		if [ $LogMissingCommonFilnames = yes ]
+			echo "$user1 is a special file name." >&2
+		fi
+	else
+		echo "$user1 is not member of '$UsersGroup' group." >&2
 	fi
 	exit 1
 fi
