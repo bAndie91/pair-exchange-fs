@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+dpkg_req_status_autofs=`dpkg-query -f '${db:Status-Abbrev;1}' --show autofs 2>/dev/null`
+
+if [ "$dpkg_req_status_autofs" != i -a "$dpkg_req_status_autofs" != h ]
+then
+	insserv -d pair-exchange-tree
+fi
