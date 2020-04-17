@@ -45,6 +45,7 @@ then
 	if grep -Exq '\.git|refs|objects|HEAD|autorun\.inf' <<<"$user1" || [ ".$user1" = ".$IndicatorFilename" ]
 	then
 		if [ $LogMissingCommonFilnames = yes ]
+		then
 			echo "$user1 is a special file name." >&2
 		fi
 	else
